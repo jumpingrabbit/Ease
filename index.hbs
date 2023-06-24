@@ -11,7 +11,7 @@
     <div class="topic-feed">
 
         {{#foreach tags}}
-            <section class="topic">
+            <section class="topic" data-name="{{name}}">
                 <header class="topic-header">
                     <h2 class="topic-name">
                         <a href="{{url}}">{{name}}</a>
@@ -25,7 +25,7 @@
                                 <a class="topic-article-link" href="{{url}}">
                                     {{> "icons/chevron-right"}} {{title}}
                                 </a>
-                                ({{date format="DD-MM-YYYY"}})
+                                <time style="font-style: italic; color: grey;" datetime="{{date format="YYYY-MM-DD"}}">({{date format="DD-MM-YYYY"}})</time>
                             </h3>
                         </li>
                         {{/foreach}}
@@ -45,6 +45,9 @@
         $('.topic').each(function(){
           if($(this).find('.topic-article').length < 5){
                $(this).find('.topic-more').hide();
+          }
+          if(!['Paid media campaigning', 'Policy recommendations and submissions', 'Public opinion research', 'Regular campaign updates'].includes($(this).data('name'))){
+             $(this).find('time').hide();
           }
         });
     };
