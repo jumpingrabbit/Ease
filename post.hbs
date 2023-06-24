@@ -19,30 +19,6 @@
             {{content}}
         </div>
 
-        <div class="pagination-container gh-canvas">
-        <nav class="pagination">
-
-            <div class="pagination-left">
-                {{#prev_post}}
-                    <a class="newer-posts" href="{{url}}">
-                        <span class="pagination-label">Previous</span>
-                        {{title}}
-                    </a>
-                {{/prev_post}}
-            </div>
-
-            <div class="pagination-right">
-                {{#next_post}}
-                    <a class="older-posts" href="{{url}}">
-                        <span class="pagination-label">Next</span>
-                        {{title}}
-                    </a>
-                {{/next_post}}
-            </div>
-
-        </nav>
-        </div>
-
         {{#if comments}}
             <div class="gh-comments gh-canvas">
                 {{comments}}
