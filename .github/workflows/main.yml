@@ -1,0 +1,42 @@
+name: Build CSS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Yarn
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build CSS
+      run: yarn run build-css
+
+    - name: Configure Git
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+      
+    - name: Commit and push if changed
+      run: |
+        git add -A
+        git diff --quiet && git diff --staged --quiet || git commit -m "Build and commit CSS files"
+        git push
