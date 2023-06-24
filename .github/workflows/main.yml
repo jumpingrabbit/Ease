@@ -30,13 +30,10 @@ jobs:
     - name: Build CSS
       run: yarn
 
-    - name: Configure Git
-      run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
-      
-    - name: Commit and push if changed
-      run: |
-        git add -A
-        git diff --quiet && git diff --staged --quiet || git commit -m "Build and commit CSS files"
-        git push
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: Yarn builder
+        author_email: nik.samoylov@campaignforaisafety.org
+        message: 'Built CSS'
+        add: '*'        
