@@ -13,6 +13,7 @@
                 <time datetime="{{date format="DD-MM-YYYY"}}">{{date updated_at}}</time>,
                 published on&nbsp;
                 <time datetime="{{date format="DD-MM-YYYY"}}">{{date}}</time>
+                by {{authors}}
             </div>
             {{> "post-image"}}
         </header>
@@ -20,21 +21,6 @@
         <div class="gh-content gh-canvas">
             {{content}}
         </div>
-
-        <hr>
-        <ul class="author-list">
-            {{#foreach authors}}
-            <li class="author-list-item">
-                {{#if profile_image}}
-                <a href="{{url}}" class="author-avatar">
-                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                </a>
-                {{else}}
-                <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                {{/if}}
-            </li>
-            {{/foreach}}
-        </ul>
 
         {{#if comments}}
             <div class="gh-comments gh-canvas">
