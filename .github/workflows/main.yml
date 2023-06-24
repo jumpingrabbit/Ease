@@ -28,7 +28,7 @@ jobs:
       run: yarn install
 
     - name: Build CSS
-      run: yarn
+      run: yarn dev
 
     - name: Commit changes
       uses: EndBug/add-and-commit@v9
