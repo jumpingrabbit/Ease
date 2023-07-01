@@ -17,7 +17,10 @@
             <h2 class="post-title">{{title}}</h2>
         </header>
         <div class="post-excerpt">
-            {{excerpt words="10"}}
+            {{excerpt words="20"}}
+        </div>
+        <div style="padding-top: 5px;">
+            <time style="font-style: italic; color: grey;" datetime="{{date format="YYYY-MM-DD"}}">({{date format="D MMM YYYY"}})</time>
         </div>
         {{!-- {{> post-meta}} --}}
     </div>
