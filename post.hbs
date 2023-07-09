@@ -12,7 +12,7 @@
                 Published on 
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>,
                 last updated on 
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date updated_at format="D MMMM YYYY"}}</time> 
+                <time datetime="{{date updated_at format="YYYY-MM-DD"}}">{{date updated_at format="D MMMM YYYY"}}</time>
                 by&nbsp;{{authors}}
             </div>
             {{> "post-image"}}
@@ -21,6 +21,14 @@
         <div class="gh-content gh-canvas">
             {{content}}
         </div>
+
+        // Link to the tag page
+        <hr>
+        <footer class="gh-article-footer">
+            <div class="post-meta">
+                📖 Read mode about {{tags separator="&nbsp;"}}.
+            </div>
+        </footer>
 
         {{#if comments}}
             <div class="gh-comments gh-canvas">
