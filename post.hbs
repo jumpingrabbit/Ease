@@ -20,15 +20,13 @@
 
         <div class="gh-content gh-canvas">
             {{content}}
+            <hr>
+            <footer class="gh-article-footer">
+                <div class="post-meta">
+                    📖 Read mode about {{tags separator="&nbsp;"}}.
+                </div>
+            </footer>
         </div>
-
-        // Link to the tag page
-        <hr>
-        <footer class="gh-article-footer">
-            <div class="post-meta">
-                📖 Read mode about {{tags separator="&nbsp;"}}.
-            </div>
-        </footer>
 
         {{#if comments}}
             <div class="gh-comments gh-canvas">
