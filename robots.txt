@@ -1,0 +1,10 @@
+Sitemap: https://www.campaignforaisafety.org/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: *
+Disallow: /ghost/
+Disallow: /p/
+Disallow: /email/
+Disallow: /r/
