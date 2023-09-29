@@ -15,6 +15,9 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
+
+# Allow indexing content for web searches:
+
 User-agent: *
 Disallow: /ghost/
 Disallow: /p/
